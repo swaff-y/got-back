@@ -5,7 +5,8 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
-  }
+  },
+  
 })
 
 //this model allows us to interact with the database

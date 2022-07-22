@@ -36,13 +36,13 @@ router.patch("/:id", getTerritory, async (req,res) => {
     res.territory.color = req.body.color;
   }
   if(req.body.quantity){
-    res.territory.quantity = req.body.quantint;
+    res.territory.quantity = req.body.quantity;
   }
 
   try{
     const updatedTerritory = await res.territory.save();
-    log.info(`201 || "Patched territory" - ${req.method} - ${req.ip}`);
-    res.status(201).json(updatedTerritory)
+    log.info(`200 || "Patched territory" - ${req.method} - ${req.ip}`);
+    res.status(200).json(updatedTerritory)
   } catch(err) {
     log.error(`400 || ${err || "Bad request on patch territory"} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
     res.status(400).json({ message: err.message })

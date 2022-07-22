@@ -1,0 +1,2 @@
+use GOT
+db.territories.updateMany({},{$set: { quantity: 0}})

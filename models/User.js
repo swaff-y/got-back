@@ -6,7 +6,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  
+  color: {
+    type: String
+  },
+  quantity: {
+    type: Number
+  }
 })
 
 //this model allows us to interact with the database

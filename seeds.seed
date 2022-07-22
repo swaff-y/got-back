@@ -49,3 +49,8 @@ db.territories.insertMany([
     { xBox:"145", yBox:"280", name:"i12" },
     { xBox:"210", yBox:"100", name:"i13" }
 ])
+
+db.users.insertOne({name: "Kyle", color: "blue", quantity: 24})
+db.users.insertOne({name: "Ryan", color: "white", quantity: 24})
+db.users.insertOne({name: "Alex", color: "yellow", quantity: 24})
+db.users.insertOne({name: "Enzo", color: "red", quantity: 24})

@@ -7,6 +7,9 @@ const gameSchema = new mongoose.Schema({
   },
   turn: {
     type: String
+  },
+  saveCount: {
+    type: Number
   }
 })
 

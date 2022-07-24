@@ -17,12 +17,12 @@ router.get("/", async (req,res) => {
 
 });
 
-//Get One
-//curl -X GET http://localhost:4000/api/v1/game/:id
-router.get("/:id", getGame, (req,res) => {
-  log.info(`200 || "Got game" - ${req.method} - ${req.ip}`);
-  res.status(200).json(res.game);
-});
+// //Get One
+// //curl -X GET http://localhost:4000/api/v1/game/:id
+// router.get("/:id", getGame, (req,res) => {
+//   log.info(`200 || "Got game" - ${req.method} - ${req.ip}`);
+//   res.status(200).json(res.game);
+// });
 
 // //Create one
 // //curl -X POST -H "Content-Type: application/json" -d '{"name":"Kyle" }' http://localhost:4000/api/v1/users/
@@ -41,13 +41,16 @@ router.get("/:id", getGame, (req,res) => {
 //   };
 // });
 //Update One
-//curl -X PATCH -H "Content-Type: application/json" -d '{"name":"Chase"}' http://localhost:4000/api/v1/users/:id
+//curl -X PATCH -H "Content-Type: application/json" -d '{"turn":"Kyle"}' http://localhost:4000/api/v1/game/:id
 router.patch("/:id", getGame, async (req,res) => {
-  if(req.body.gameOrder !== null){
-    res.game.gameOrder = req.body.gameOrder;
-  }
+  // if(req.body.gameOrder !== null){
+  //   res.game.gameOrder = req.body.gameOrder;
+  // }
   if(req.body.turn !== null){
-    res.user.turn = req.body.turn;
+    res.game.turn = req.body.turn;
+  }
+  if(req.body.saveCount !== null){
+    res.game.saveCount = req.body.saveCount;
   }
 
   try{

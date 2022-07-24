@@ -24,6 +24,7 @@ app.use(express.json());
 const indexController = require("./controllers/index");
 const usersController = require("./controllers/users");
 const territoriesController = require("./controllers/territories");
+const gameController = require("./controllers/game");
 
 const corsOpts = {
     origin: '*',
@@ -50,6 +51,7 @@ try {
     //endpoints
     app.use(BASE_URL+"users", usersController);
     app.use(BASE_URL+"territories", territoriesController);
+    app.use(BASE_URL+"game", gameController);
 } catch (error) {
     log.error(`Fatal || ${ "Error on routes - " + error || "Internal server error"}`);
 }

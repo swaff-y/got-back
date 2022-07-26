@@ -41,16 +41,18 @@ router.post("/", async (req,res) => {
   };
 });
 //Update One
-//curl -X PATCH -H "Content-Type: application/json" -d '{"name":"Chase"}' http://localhost:4000/api/v1/users/:id
+//curl -X PATCH -H "Content-Type: application/json" -d '{"quantity":"23"}' http://localhost:4000/api/v1/users/:id
 router.patch("/:id", getUser, async (req,res) => {
-  if(req.body.name !== null){
-    res.user.name = req.body.name;
+  log.info(`User - ${res.user}`);
+  log.info(`body - ${req.body}`);
+  if(req.body.quantity !== null){
+    res.user.quantity = req.body.quantity
   }
 
   try{
     const updatedUser = await res.user.save();
-    log.info(`201 || "Patched user" - ${req.method} - ${req.ip}`);
-    res.status(201).json(updatedUser)
+    log.info(`200 || "Patched user" - ${req.method} - ${req.ip}`);
+    res.status(200).json(updatedUser)
   } catch(err) {
     log.error(`400 || ${err || "Bad request on patch user"} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
     res.status(400).json({ message: err.message })

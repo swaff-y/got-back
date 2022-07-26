@@ -1,3 +1,4 @@
 use GOT
 db.territories.updateMany({},{$set: { quantity: 0}})
 db.games.updateOne({},{$set:{gameOrder:['Kyle','Alex','Enzo','Ryan'], turn: "Kyle", saveCount:0}})
+db.users.updateMany({},{$set:{quantity:24}})

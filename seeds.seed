@@ -50,6 +50,8 @@ db.territories.insertMany([
     { xBox:"210", yBox:"100", name:"i13" }
 ])
 
+db.games.insertOne({gameOrder: ['Kyle','Alex','Enzo','Ryan'], turn: 'Kyle', saveCount: 0})
+
 db.users.insertOne({name: "Kyle", color: "blue", quantity: 24})
 db.users.insertOne({name: "Ryan", color: "white", quantity: 24})
 db.users.insertOne({name: "Alex", color: "yellow", quantity: 24})
